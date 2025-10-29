@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver Registration - Rural Rescue Rover</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body class="min-h-screen bg-gray-50 flex flex-col">
+    <custom-navbar></custom-navbar>
+
+    <main class="flex-grow py-12 px-4">
+        <div class="max-w-2xl mx-auto">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-900">Driver Registration</h2>
+                <p class="mt-2 text-gray-600">Join our network of emergency responders</p>
+            </div>
+
+            <form class="bg-white p-8 rounded-xl shadow-lg space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="firstName" class="block text-sm font-medium text-gray-700">First Name</label>
+                        <input 
+                            id="firstName" 
+                            name="firstName" 
+                            type="text" 
+                            required 
+                            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500"
+                            placeholder="Enter your first name">
+                    </div>
+                    <div>
+                        <label for="lastName" class="block text-sm font-medium text-gray-700">Last Name</label>
+                        <input 
+                            id="lastName" 
+                            name="lastName" 
+                            type="text" 
+                            required 
+                            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500"
+                            placeholder="Enter your last name">
+                    </div>
+                </div>
+
+                <div>
+                    <label for="phone" class="block text-sm font-medium text-gray-700">Phone Number</label>
+                    <input 
+                        id="phone" 
+                        name="phone" 
+                        type="tel" 
+                        required 
+                        class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500"
+                        placeholder="Enter your phone number">
+                </div>
+
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+                    <input 
+                        id="email" 
+                        name="email" 
+                        type="email" 
+                        class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500"
+                        placeholder="Enter your email (optional)">
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                        <input 
+                            id="password" 
+                            name="password" 
+                            type="password" 
+                            required 
+                            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500"
+                            placeholder="Create a password">
+                    </div>
+                    <div>
+                        <label for="confirmPassword" class="block text-sm font-medium text-gray-700">Confirm Password</label>
+                        <input 
+                            id="confirmPassword" 
+                            name="confirmPassword" 
+                            type="password" 
+                            required 
+                            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500"
+                            placeholder="Confirm your password">
+                    </div>
+                </div>
+
+                <div>
+                    <label for="ambulanceNumber" class="block text-sm font-medium text-gray-700">Ambulance Number</label>
+                    <input 
+                        id="ambulanceNumber" 
+                        name="ambulanceNumber" 
+                        type="text" 
+                        required 
+                        class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500"
+                        placeholder="Enter ambulance registration number">
+                </div>
+
+                <div>
+                    <label for="licenseNumber" class="block text-sm font-medium text-gray-700">Driver License Number</label>
+                    <input 
+                        id="licenseNumber" 
+                        name="licenseNumber" 
+                        type="text" 
+                        required 
+                        class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500"
+                        placeholder="Enter your driver license number">
+                </div>
+
+                <div class="flex items-center">
+                    <input id="terms" name="terms" type="checkbox" required class="h-4 w-4 text-red-600 focus:ring-red-500 border-gray-300 rounded">
+                    <label for="terms" class="ml-2 block text-sm text-gray-900">
+                        I agree to the <a href="/terms.html" class="text-red-600 hover:text-red-500">Terms of Service</a> and <a href="/privacy.html" class="text-red-600 hover:text-red-500">Privacy Policy</a>
+                    </label>
+                </div>
+
+                <div>
+                    <button type="submit" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
+                        <i data-feather="user-plus" class="mr-2"></i>
+                        Complete Registration
+                    </button>
+                </div>
+
+                <div class="text-center">
+                    <p class="text-sm text-gray-600">
+                        Already have an account? 
+                        <a href="driver-login.html" class="font-medium text-red-600 hover:text-red-500">Login here</a>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <custom-footer></custom-footer>
+
+    <script src="navbar.js"></script>
+    <script src="footer.js"></script>
+    <script src="script.js"></script>
+    <script>
+        feather.replace();
+        
+        // Form submission handler
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
+                phone: document.getElementById('phone').value,
+                email: document.getElementById('email').value,
+                password: document.getElementById('password').value,
+                confirmPassword: document.getElementById('confirmPassword').value,
+                ambulanceNumber: document.getElementById('ambulanceNumber').value,
+                licenseNumber: document.getElementById('licenseNumber').value
+            };
+            
+            // Validate form
+            const errors = [];
+            
+            if (!formData.firstName) errors.push('First name is required');
+            if (!formData.lastName) errors.push('Last name is required');
+            if (!formData.phone || formData.phone.length < 10) errors.push('Valid phone number is required');
+            if (!formData.password || formData.password.length < 6) errors.push('Password must be at least 6 characters');
+            if (formData.password !== formData.confirmPassword) errors.push('Passwords do not match');
+            if (!formData.ambulanceNumber) errors.push('Ambulance number is required');
+            if (!formData.licenseNumber) errors.push('Driver license number is required');
+            
+            if (errors.length > 0) {
+                showError(errors.join('<br>'));
+                return;
+            }
+            
+            // Simulate registration process
+            showLoading('Creating your account...');
+            
+            setTimeout(() => {
+                hideLoading();
+                showSuccess('Registration successful! Please login to continue.');
+                
+                setTimeout(() => {
+                    window.location.href = '/driver-login.html';
+                }, 1500);
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

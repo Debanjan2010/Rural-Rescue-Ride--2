@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rural Rescue Rover - Emergency Ambulance Service</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js"></script>
+</head>
+<body class="min-h-screen flex flex-col">
+    <custom-navbar></custom-navbar>
+    <!-- Hero Section -->
+    <section id="hero" class="relative flex-grow flex items-center justify-center py-12 px-4 md:py-20">
+        <div class="absolute inset-0 z-0" id="vanta-bg"></div>
+        <div class="relative z-10 max-w-4xl mx-auto text-center text-white">
+            <h1 class="text-3xl md:text-6xl font-bold mb-4 md:mb-6">Rural Rescue Rover</h1>
+            <p class="text-lg md:text-2xl mb-6 md:mb-8">Emergency ambulance service at your fingertips</p>
+            <div class="space-y-4 md:space-y-0 md:space-x-4">
+                <button onclick="requestAmbulance()" class="bg-teal-600 hover:bg-teal-700 text-white px-6 py-3 md:px-8 md:py-4 rounded-lg text-base md:text-lg font-semibold transition duration-300 transform hover:scale-105 w-full md:w-auto">
+                    <i data-feather="alert-triangle" class="inline mr-2"></i>
+                    Request Ambulance Now
+                </button>
+                <a href="driver-login.html" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 md:px-8 md:py-4 rounded-lg text-base md:text-lg font-semibold transition duration-300 transform hover:scale-105 inline-block text-center w-full md:w-auto">
+                    <i data-feather="truck" class="inline mr-2"></i>
+                    Driver Login
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- Story Section -->
+    <section class="py-12 md:py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="bg-gradient-to-r from-teal-50 to-blue-50 rounded-2xl p-6 md:p-8">
+                <h2 class="text-2xl md:text-3xl font-bold text-center mb-6 md:mb-8 text-gray-800">Why We Exist</h2>
+                <div class="bg-white rounded-xl p-6 md:p-8 shadow-lg">
+                    <h3 class="text-xl md:text-2xl font-semibold mb-4 text-teal-700">The Tragic Story of Monty Rathi</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                        Monty Rathi lost his life due to a two-and-a-half-hour delay in ambulance arrival. 
+                        Despite multiple calls to emergency services, the lack of coordination and delayed response proved fatal.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed">
+                        Such incidents highlight why systems like 'Rural Rescue Rover' are crucial — ensuring that every emergency call 
+                        receives a quick response by connecting patients to nearby drivers instantly through an AI and IoT-based alert network.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-12 md:py-16 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12">How It Works</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+                <div class="text-center p-4 md:p-6 bg-white rounded-xl shadow-md">
+                    <div class="bg-teal-100 p-3 md:p-4 rounded-full w-12 h-12 md:w-16 md:h-16 mx-auto mb-4 flex items-center justify-center">
+                        <i data-feather="map-pin" class="text-teal-600 w-6 h-6 md:w-8 md:h-8"></i>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-semibold mb-2 text-gray-800">GPS Location</h3>
+                    <p class="text-gray-600 text-sm md:text-base">Automatically detects your location using GPS technology</p>
+                </div>
+                <div class="text-center p-4 md:p-6 bg-white rounded-xl shadow-md">
+                    <div class="bg-blue-100 p-3 md:p-4 rounded-full w-12 h-12 md:w-16 md:h-16 mx-auto mb-4 flex items-center justify-center">
+                        <i data-feather="message-circle" class="text-blue-600 w-6 h-6 md:w-8 md:h-8"></i>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-semibold mb-2 text-gray-800">SMS Support</h3>
+                    <p class="text-gray-600 text-sm md:text-base">Receive SMS notifications and updates about your ambulance</p>
+                </div>
+                <div class="text-center p-4 md:p-6 bg-white rounded-xl shadow-md">
+                    <div class="bg-emerald-100 p-3 md:p-4 rounded-full w-12 h-12 md:w-16 md:h-16 mx-auto mb-4 flex items-center justify-center">
+                        <i data-feather="clock" class="text-emerald-600 w-6 h-6 md:w-8 md:h-8"></i>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-semibold mb-2 text-gray-800">Quick Response</h3>
+                    <p class="text-gray-600 text-sm md:text-base">Nearest available ambulance dispatched to your location</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats & Charts Section -->
+    <section class="py-12 md:py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12 text-gray-800">Impact & Performance</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+                <div>
+                    <h3 class="text-xl md:text-2xl font-semibold mb-6 text-teal-700">Response Time Improvement</h3>
+                    <div class="bg-gray-50 p-6 rounded-xl">
+                        <canvas id="responseTimeChart" width="400" height="300"></canvas>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl md:text-2xl font-semibold mb-6 text-teal-700">Service Coverage</h3>
+                    <div class="bg-gray-50 p-6 rounded-xl">
+                        <canvas id="coverageChart" width="400" height="300"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<custom-footer></custom-footer>
+    <!-- Component Scripts -->
+    <script src="navbar.js"></script>
+    <script src="footer.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Initialize Vanta.js background
+        VANTA.GLOBE({
+            el: "#vanta-bg",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0x14b8a6,
+            backgroundColor: 0x0f172a,
+            size: 0.8
+        });
+
+        feather.replace();
+
+        // Initialize Charts
+        document.addEventListener('DOMContentLoaded', function() {
+            // Response Time Chart
+            const responseTimeCtx = document.getElementById('responseTimeChart').getContext('2d');
+            new Chart(responseTimeCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Traditional', 'Our System'],
+                    datasets: [{
+                        label: 'Average Response Time (minutes)',
+                        data: [150, 25],
+                        backgroundColor: [
+                            'rgba(20, 184, 166, 0.7)',
+                            'rgba(20, 184, 166, 0.9)'
+                        ],
+                        borderColor: [
+                            'rgba(20, 184, 166, 1)',
+                            'rgba(20, 184, 166, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Minutes'
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Coverage Chart
+            const coverageCtx = document.getElementById('coverageChart').getContext('2d');
+            new Chart(coverageCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Villages Covered', 'Pending Coverage'],
+                    datasets: [{
+                        data: [65, 35],
+                        backgroundColor: [
+                            'rgba(20, 184, 166, 0.7)',
+                            'rgba(59, 130, 246, 0.7)'
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

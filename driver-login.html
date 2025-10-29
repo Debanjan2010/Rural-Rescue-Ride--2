@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver Login - Rural Rescue Rover</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body class="min-h-screen bg-gray-50 flex flex-col">
+    <custom-navbar></custom-navbar>
+
+    <main class="flex-grow flex items-center justify-center py-12 px-4">
+        <div class="max-w-md w-full space-y-8">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold text-gray-900">Driver Login</h2>
+                <p class="mt-2 text-gray-600">Access your ambulance dashboard</p>
+            </div>
+
+            <form class="mt-8 space-y-6 bg-white p-8 rounded-xl shadow-lg">
+                <div class="space-y-4">
+                    <div>
+                        <label for="phone" class="block text-sm font-medium text-gray-700">Phone Number</label>
+                        <input 
+                            id="phone" 
+                            name="phone" 
+                            type="tel" 
+                            required 
+                            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500"
+                            placeholder="Enter your phone number">
+                    </div>
+                    <div>
+                        <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                        <input 
+                            id="password" 
+                            name="password" 
+                            type="password" 
+                            required 
+                            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500"
+                            placeholder="Enter your password">
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                        <input id="remember-me" name="remember-me" type="checkbox" class="h-4 w-4 text-red-600 focus:ring-red-500 border-gray-300 rounded">
+                        <label for="remember-me" class="ml-2 block text-sm text-gray-900">Remember me</label>
+                    </div>
+
+                    <div class="text-sm">
+                        <a href="/forgot-password.html" class="font-medium text-red-600 hover:text-red-500">Forgot your password?</a>
+                    </div>
+                </div>
+
+                <div>
+                    <button type="submit" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
+                            <i data-feather="log-in" class="mr-2"></i>
+                            Sign in to Dashboard
+                        </button>
+                    </div>
+
+                    <div class="text-center">
+                        <p class="text-sm text-gray-600">
+                            Don't have an account? 
+                            <a href="driver-register.html" class="font-medium text-red-600 hover:text-red-500">Register here</a>
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </main>
+
+        <custom-footer></custom-footer>
+
+        <script src="navbar.js"></script>
+        <script src="footer.js"></script>
+        <script src="script.js"></script>
+        <script>
+            feather.replace();
+            
+            // Form submission handler
+            document.querySelector('form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const formData = {
+                    phone: document.getElementById('phone').value,
+                    password: document.getElementById('password').value
+                };
+                
+                const errors = validateForm(formData);
+                
+                if (errors.length > 0) {
+                    showError(errors.join('<br>'));
+                    return;
+                }
+                
+                // Simulate login process
+                showLoading('Signing in...');
+                
+                setTimeout(() => {
+                    hideLoading();
+                    showSuccess('Login successful! Redirecting to dashboard...');
+                    
+                    // In real implementation, redirect to driver dashboard
+                    setTimeout(() => {
+                        window.location.href = '/driver-dashboard.html';
+                    }, 1500);
+                }, 2000);
+            });
+        </script>
+    </body>
+    </html>
