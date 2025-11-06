@@ -42,8 +42,10 @@ Simulated SMS API (console)	Notification simulation for demo purposes
 
 └── components/
     ├── navbar.js          # Custom navigation bar
+
     
-    └── footer.js          # Custom footer
+ └── footer.js          # 
+    Custom footer
     
 
 🚀 How It Works
@@ -66,3 +68,12 @@ Hospital-side dashboard for coordination.
 
 AI prediction for ambulance demand in specific zones.
 
+Future Improvements 
+
+Add Google Maps API to show driver location.
+
+Add Firebase or MySQL backend to store registrations permanently.
+
+Add SMS alerts for nearby drivers.
+
+Add Admin dashboard for monitoring.
